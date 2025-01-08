@@ -1,7 +1,7 @@
 PGUSER=<RICARDO>
 PGHOST=<PGHOST>
 PGPASSWORD=<PGPASSWORD>Rv03182002@</PGPASSWORD>
-PGDATABASE=<PGDATABASE>BDCADPACIENTES</PGDATABASE>
+PGDATABASE=<PGDATABASE>BDPRodutos</PGDATABASE>
 PGPORT=<PGPORT>5432</PGPORT>
 
 const dotenv = require("dotenv")
@@ -22,7 +22,7 @@ const connectDb = async () => {
         });
  
         await pool.connect()
-        const res = await pool.query('SELECT * FROM clients')
+        const res = await pool.query('SELECT * FROM Produtos')
         console.log(res)
         await pool.end()
     } catch (error) {

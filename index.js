@@ -4,7 +4,7 @@ const cliente = new Client({
   password: 'Lua027167&',
   host: 'localhost',
   port: 5432,
-  database: 'DBCADPAC'  
+  database: 'DBPRodutos'  
 })
 
 
@@ -19,16 +19,16 @@ cliente.query('select * from Pacientes')
 
 
 
-async function getPacientes(){
+async function getProdutos(){
     try{
         await cliente.connect()
         console.log('Conexão bem sucedida')
-        const resultado = await cliente.query('select * from BDpacientes')
+        const resultado = await cliente.query('SELECT * FROM public."Produtos"')
         console.table(resultado.rows)
     }
 
     catch(ex){
-        console.log('Ocorreu um erro em getBDpacientes. Erro:'+ ex)
+        console.log('Ocorreu um erro em getBDProdutos. Erro:'+ ex)
 
     }    
 
@@ -38,22 +38,22 @@ async function getPacientes(){
     }   
 }
 
-//getPacientes()
+//getProdutos()
 
-async function setPacientes(nome){
+async function setProdutos(nome){
 
     try{
         await cliente.connect()
         console.log('Conexão bem sucedida')
-        await cliente.query('insert into pacientes("nome") values('+"'"+nome+"');")
+        await cliente.query('INSERT INTO public."Produtos" values(1,"categoria", 4, "nomedoproduto", 10.00 );')
         console.log('Valor inserido na tabela')
 
-        const resultado = await cliente.query('select * from pacientes')
+        const resultado = await cliente.query('SELECT * FROM public."Produtos"')
         console.table(resultado.rows)
     }
 
     catch(ex){
-        console.log('Ocorreu um erro em getBDpacientes. Erro:'+ ex)
+        console.log('Ocorreu um erro em getBDPRodutos. Erro:'+ ex)
 
     }    
 
@@ -64,8 +64,8 @@ async function setPacientes(nome){
 }
 
 const entrada = require("prompt-sync")();
-let nome = entrada("Digite seu nome:");
-setPacientes(`${nome}`);
+let nome = entrada("Digite o nome do produto:");
+setProdutos(`${nome}`);
 
 async function delPacientes(nome){
     try{
