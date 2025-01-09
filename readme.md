@@ -100,6 +100,14 @@ Este é um programa em JavaScript para gerenciar produtos com funcionalidades de
 
 - Escolha a opção **5** no menu para encerrar o programa e desconectar do banco de dados.
 
+## Documentação do código
+- Conexão com banco de dados
+Aqui foi utilizada a biblioteca PG para conexão com PostgreSQL.
+- menu
+Utilizado biblioteca prompt-sync para o menu.
+Criação das funcionalidades de cadastrar, listar, alterar e deleter produtos.
+- Funcionalidades
+Na execução do código abre o menu de opções na qual classificando a opção desejada é selecionado para cadastro de produto além de alteração e deletar. Também é possível a opção de listar na qual vai aparecer a tabela de produtos com suas características. Por fim tem a opção sair para finalizar a aplicação.
 ---
 
 Se você tiver dúvidas ou problemas ao executar o programa, sinta-se à vontade para entrar em contato!
