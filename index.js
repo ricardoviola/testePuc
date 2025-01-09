@@ -7,18 +7,6 @@ const cliente = new Client({
   database: 'DBPRodutos'  
 })
 
-
-/*cliente.connect();
-cliente.query('select * from Pacientes')
-.then(results => {
-    const resultado = results.rows
-    console.table(resultado)
-})
-.finally(() => cliente.end())
-*/
-
-
-
 async function getProdutos(){
     try{
         await cliente.connect()
